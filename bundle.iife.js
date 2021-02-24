@@ -83,7 +83,7 @@ var Wave = (function () {
                 requestAnimationFrame(renderFrame);
                 frameCount++;
 
-                //check if this element is the last to be called 
+                //check if this element is the last to be called
                 if (!(currentCount < this.activeElements[element_id].count)) {
                     analyser.getByteFrequencyData(data);
                     this.activeElements[element_id].data = data;
@@ -110,7 +110,7 @@ var Wave = (function () {
         if (this.activated || options['skipUserEventsWatcher']) {
             run.call(waveContext);
         } else {
-            //wait for a valid user gesture 
+            //wait for a valid user gesture
             document.body.addEventListener("touchstart", create, { once: true });
             document.body.addEventListener("touchmove", create, { once: true });
             document.body.addEventListener("touchend", create, { once: true });
@@ -751,7 +751,7 @@ var Wave = (function () {
         points.start.forEach((start, i) => {
             let squareCount = Math.ceil(data[i] / squareSize);
 
-            //find color stops from total possible squares in bar 
+            //find color stops from total possible squares in bar
             let totalSquares = (h - (spacing * (h / squareSize))) / squareSize;
             let colorStop = Math.ceil(totalSquares / colors.length);
 
@@ -1390,7 +1390,10 @@ var Wave = (function () {
     };
 
     Screen.prototype.clear = function() {
-      this.paper.ctx.clearRect(0, 0, this.paper.width, this.paper.height);
+      this.paper.ctx.save();
+      this.paper.ctx.fillStyle = window.bgColor;
+      this.paper.ctx.fillRect(0, 0, this.paper.width, this.paper.height);
+      ctx.restore();
     };
 
     function ArcShape(params) {
@@ -2170,7 +2173,10 @@ var Wave = (function () {
             //abide by the frame rate
             if (frame % frameRateMap[type] === 0) {
                 //clear canvas
-                ctx.clearRect(0, 0, w, h);
+                ctx.save();
+                ctx.fillStyle = window.bgColor;
+                ctx.fillRect(0, 0, w, h);
+                ctx.restore();
                 ctx.beginPath();
 
                 typeMap[type](functionContext);
@@ -2209,7 +2215,7 @@ var Wave = (function () {
             }
 
             if (type === "shrink") {
-                //resize array by % of current array 
+                //resize array by % of current array
                 if (extra < 1) {
                     extra = data.length * extra;
                 }
