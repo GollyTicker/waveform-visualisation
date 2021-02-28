@@ -57,3 +57,7 @@ window.onload = () => {
   drawBackgroundCanvas();
   document.getElementById("convertButton").onclick = convertHandler;
 }
+
+const handleUploadedFile = (file) => {
+  audio().src = URL.createObjectURL(file);
+}

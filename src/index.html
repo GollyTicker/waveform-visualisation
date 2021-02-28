@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Convert audio files to visualised waveform data</title>
+    <script src="bundle.iife.js"></script>
+    <script src="whammy.js"></script>
+    <script src="converter.js"></script>
+  </head>
+  <body>
+    <div>
+      <input title="Upload your audio file" style="color:white" id="uploader" type="file" onchange="handleUploadedFile(this.files[0]);">
+    </div>
+
+    <div>
+      <audio controls id="audio" src=""></audio>
+    </div>
+
+    <div>
+      <canvas id="canvas" width="400" height="90" style="border: white dashed 2px;"></canvas>
+    </div>
+
+    <div>
+      <button type="button" id="convertButton" name="convert" style="margin: 10px">Conversion step</button>
+    </div>
+
+    <div>
+      <video controls autoplay loop width="400" height="90" id="video"></video>
+    </div>
+  </body>
+</html>
