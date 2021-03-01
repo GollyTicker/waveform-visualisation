@@ -2,7 +2,7 @@ const VIDEO_FRAMES_PER_SECOND = 30;
 const SECOND = 1;
 const SECOND_TO_MILLIS = 1000;
 
-window.bgColor = "#005";
+window.bgColor = "#2F65F9";
 
 let wave = new Wave();
 
@@ -12,7 +12,7 @@ options = {type: "dualbars blocks", stroke: 2, colors: ["white","yellow"]};
 
 options = {type: "cubes", stroke: 2, colors: ["#fdd"]};
 
-options = {type: "dualbars", stroke: 2, colors: ["#fdd"]};
+options = {type: "dualbars", stroke: 2, colors: ["white"]};
 
 const encoder = new Whammy.Video(VIDEO_FRAMES_PER_SECOND);
 
