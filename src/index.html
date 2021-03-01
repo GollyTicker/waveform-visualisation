@@ -7,14 +7,33 @@
     <script src="bundle.iife.js"></script>
     <script src="whammy.js"></script>
     <script src="converter.js"></script>
+    <style>
+    body {
+      color: white;
+    }
+    div {
+      margin: 15px;
+    }
+    </style>
   </head>
   <body>
+    <h2>
+      Waveform visualiser
+    </h2>
+    <ol>
+      <li>Open this page in an up to date Google Chrome browser.</li>
+      <li>Upload your audio file</li>
+      <li>Click once on <b>Conversion step</b> to start. The audio will playback and the visualisation will be drawn and recorded.</li>
+      <li>When you reach the end of your audio, click on <b>Conversion step</b> again to stop the playback. The recorded visualisation will be converted to  a video.</li>
+      <li>When the conversion is finished, the video will automatically play the recording. (the conversion can take a while for long audio files.)</li>
+      <li>Finally you can right click on the video and click "Save video as..." to save it.</li>
+    </ol>
     <div>
       <input title="Upload your audio file" style="color:white" id="uploader" type="file" onchange="handleUploadedFile(this.files[0]);">
     </div>
 
     <div>
-      <audio controls id="audio" src=""></audio>
+      <audio controls loop id="audio" src=""></audio>
     </div>
 
     <div>
