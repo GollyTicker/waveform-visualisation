@@ -2,7 +2,7 @@ const VIDEO_FRAMES_PER_SECOND = 30;
 const SECOND = 1;
 const SECOND_TO_MILLIS = 1000;
 
-window.bgColor = "#2F65F9";
+window.bgColor = "#5271FF";
 
 let wave = new Wave();
 
