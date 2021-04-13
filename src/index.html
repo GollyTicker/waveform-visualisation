@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-    <title>Convert audio files to visualised waveform data</title>
-    <script src="bundle.iife.js"></script>
-    <script src="whammy.js"></script>
-    <script src="converter.js"></script>
-    <style>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>Convert audio files to visualised waveform data</title>
+  <script src="bundle.iife.js"></script>
+  <script src="whammy.js"></script>
+  <script src="converter.js"></script>
+  <style>
     body {
       color: white;
     }
+
     div {
       margin: 15px;
     }
-    </style>
-  </head>
-  <body>
-    <h2>
-      Waveform visualiser
-    </h2>
-    <ol>
-      <li>Open this page in an up to date Google Chrome browser.</li>
-      <li>Upload your audio file</li>
-      <li>Click on <b>Convert full audio</b> once. It will playback the audio from beginning to end and convert everything.
-      <li>Alternatively, to convert a subsegemnt of the audio you can follow these steps:
-        <ol>
-          <li>In the audio player, move to the position where you want to start the visualisation at.</li>
-          <li>Click once on <b>Conversion step</b> to start. The audio will playback and the visualisation will be drawn and recorded.</li>
-          <li>When you reach moment in the audio until where you want to convert, simply click on <b>Conversion step</b> again to stop the playback. The recorded visualisation will be converted to  a video.</li>
-        </ol>
-      </li>
-      <li>When the conversion is finished, the video will automatically play the recording. (the conversion can take a while for long audio files.)</li>
-      <li>Finally you can right click on the video and click "Save video as..." to save it.</li>
-    </ol>
-    <div>
-      <input title="Upload your audio file" style="color:white" id="uploader" type="file" onchange="handleUploadedFile(this.files[0]);">
-    </div>
+  </style>
+</head>
 
-    <div>
-      <audio controls loop id="audio" src=""></audio>
-    </div>
+<body>
+  <h2>
+    Waveform visualiser
+  </h2>
+  <ol>
+    <li>Open this page in an up to date Google Chrome browser.</li>
+    <li>Upload your audio file</li>
+    <li>Click on <b>Convert full audio</b> once. It will playback the audio from beginning to end and convert everything.
+    <li>Alternatively, to convert a subsegemnt of the audio you can follow these steps:
+      <ol>
+        <li>In the audio player, move to the position where you want to start the visualisation at.</li>
+        <li>Click once on <b>Conversion step</b> to start. The audio will playback and the visualisation will be drawn and recorded.</li>
+        <li>When you reach moment in the audio until where you want to convert, simply click on <b>Conversion step</b> again to stop the playback. The recorded visualisation will be converted to a video.</li>
+      </ol>
+    </li>
+    <li>When the conversion is finished, the video will automatically play the recording. (the conversion can take a while for long audio files.)</li>
+    <li>Finally you can right click on the video and click "Save video as..." to save it.</li>
+  </ol>
+  <div>
+    <input title="Upload your audio file" style="color:white" id="uploader" type="file" onchange="handleUploadedFile(this.files[0]);">
+  </div>
 
-    <div>
-      <canvas id="canvas" width="800" height="180" style="border: white dashed 2px;"></canvas>
-    </div>
+  <div>
+    <audio controls loop id="audio" src=""></audio>
+  </div>
 
-    <div>
-      <button type="button" id="convertButton" name="convert" style="margin: 10px">Conversion step</button>
-    </div>
+  <div>
+    <canvas id="canvas" width="800" height="180" style="border: white dashed 2px;"></canvas>
+  </div>
 
-    <div>
-      <video controls autoplay loop width="800" height="180" id="video"></video>
-    </div>
-  </body>
+  <div>
+    <button type="button" id="convertButton" name="convert" style="margin: 10px">Conversion step</button>
+  </div>
+
+  <div>
+    <video controls autoplay loop width="800" height="180" id="video"></video>
+  </div>
+</body>
+
 </html>

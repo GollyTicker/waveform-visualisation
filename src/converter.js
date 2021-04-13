@@ -8,11 +8,23 @@ let wave = new Wave();
 
 let options = {};
 
-options = {type: "dualbars blocks", stroke: 2, colors: ["white","yellow"]};
+options = {
+  type: "dualbars blocks",
+  stroke: 2,
+  colors: ["white", "yellow"]
+};
 
-options = {type: "cubes", stroke: 2, colors: ["#fdd"]};
+options = {
+  type: "cubes",
+  stroke: 2,
+  colors: ["#fdd"]
+};
 
-options = {type: "dualbars", stroke: 2, colors: ["white"]};
+options = {
+  type: "dualbars",
+  stroke: 2,
+  colors: ["white"]
+};
 
 const encoder = new Whammy.Video(VIDEO_FRAMES_PER_SECOND);
 
@@ -34,11 +46,10 @@ let renderVideo = () => {
 let timer = 0;
 
 let convertHandler = () => {
-  if(audio().paused) {
+  if (audio().paused) {
     audio().play();
     timer = setInterval(addFrame, SECOND / VIDEO_FRAMES_PER_SECOND * SECOND_TO_MILLIS);
-  }
-  else {
+  } else {
     audio().pause();
     clearInterval(timer);
     renderVideo();
@@ -48,12 +59,12 @@ let convertHandler = () => {
 function drawBackgroundCanvas() {
   const ctx = canvas().getContext("2d");
   ctx.fillStyle = bgColor;
-  ctx.fillRect(0,0,400,90);
+  ctx.fillRect(0, 0, 400, 90);
 }
 
 window.onload = () => {
   document.body.style.backgroundColor = bgColor;
-  wave.fromElement("audio","canvas",options);
+  wave.fromElement("audio", "canvas", options);
   drawBackgroundCanvas();
   document.getElementById("convertButton").onclick = convertHandler;
 }
