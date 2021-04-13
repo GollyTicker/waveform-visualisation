@@ -16,6 +16,26 @@
     div {
       margin: 15px;
     }
+
+    #convertFullButton {
+      margin: 10px;
+      border: white 3px dashed;
+      font-size: 1.2em;
+    }
+
+    #convertStepButton {
+      margin: 10px;
+      font-size: 0.8em;
+    }
+
+    #canvas {
+      border: white dashed 2px;
+    }
+
+    #recordingIndicator.active {
+      color: darkred;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -26,8 +46,8 @@
   <ol>
     <li>Open this page in an up to date Google Chrome browser.</li>
     <li>Upload your audio file</li>
-    <li>Click on <b>Convert full audio</b> once. It will playback the audio from beginning to end and convert everything.
-    <li>Alternatively, to convert a subsegemnt of the audio you can follow these steps:
+    <li>Click on <b>Convert Full Audio</b> once. It will playback the audio from beginning to end and convert everything.
+    <li>Alternatively, to convert a segment of the audio you can follow these steps:
       <ol>
         <li>In the audio player, move to the position where you want to start the visualisation at.</li>
         <li>Click once on <b>Conversion step</b> to start. The audio will playback and the visualisation will be drawn and recorded.</li>
@@ -37,24 +57,35 @@
     <li>When the conversion is finished, the video will automatically play the recording. (the conversion can take a while for long audio files.)</li>
     <li>Finally you can right click on the video and click "Save video as..." to save it.</li>
   </ol>
+
   <div>
     <input title="Upload your audio file" style="color:white" id="uploader" type="file" onchange="handleUploadedFile(this.files[0]);">
   </div>
 
   <div>
-    <audio controls loop id="audio" src=""></audio>
+    <audio controls id="audio" src=""></audio>
   </div>
 
   <div>
-    <canvas id="canvas" width="800" height="180" style="border: white dashed 2px;"></canvas>
+    <canvas id="canvas" width="800" height="180"></canvas>
   </div>
 
   <div>
-    <button type="button" id="convertButton" name="convert" style="margin: 10px">Conversion step</button>
+    <p>
+      Status: <span id="recordingIndicator"></span>
+    </p>
+
+    <button type="button" id="convertFullButton" name="convertFull">
+      Convert Full Audio
+    </button>
+
+    <button type="button" id="convertStepButton" name="convertStep">
+      Conversion step
+    </button>
   </div>
 
   <div>
-    <video controls autoplay loop width="800" height="180" id="video"></video>
+    <video controls autoplay width="800" height="180" id="video"></video>
   </div>
 </body>
 
