@@ -1,13 +1,7 @@
 ./stop-http-service.sh || true
 
-PORT=`cat build/config.yml | grep "http-listen-port" | awk '{print $2}'`
+source source.sh
 
-docker build -f build/Dockerfile -t waveform-viz:v1 .
+docker build -f build/Dockerfile -t $IMG .
 
-CMD="docker run --rm \
---name waveform-viz-runner \
--p ${PORT}:${PORT} waveform-viz:v1"
-
-echo "$CMD"
-
-(nohup $CMD 2>&1 &) > /dev/null
+docker-compose -f build/docker-compose.yml up --build --detach

@@ -1,3 +1,5 @@
+source source.sh
+
 echo "Stopping runner"
-docker stop waveform-viz-runner
+docker-compose -f build/docker-compose.yml down
 echo "Stopped runner"

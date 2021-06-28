@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  waveform-web:
+    image: ${IMG}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${PORT}:${PORT}
+    networks:
+      - waveform-net
+
+networks:
+  waveform-net:
+    name: waveform-net
+    driver: bridge
