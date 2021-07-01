@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route("/", defaults={"filename": "index.html"})
 @app.route("/<path:filename>")
 def serve_static_files(filename):
-    return send_from_directory("src", filename)
+    return send_from_directory(".", filename)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT, debug=True)
