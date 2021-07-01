@@ -1,7 +1,5 @@
-import http.server
-import socketserver
 import yaml
-import os
+from flask import Flask, request, send_from_directory
 
 CONFIG = "build/config.yml"
 
@@ -13,12 +11,12 @@ d = read_config()
 
 PORT = d["http-listen-port"]
 
-handler = http.server.SimpleHTTPRequestHandler
+app = Flask(__name__)
 
-adress = "0.0.0.0"
+@app.route("/", defaults={"filename": "index.html"})
+@app.route("/<path:filename>")
+def serve_static_files(filename):
+    return send_from_directory("src", filename)
 
-os.chdir("src")
-
-with socketserver.TCPServer((adress, PORT), handler) as httpd:
-    print("Server started at " + adress + ":" + str(PORT))
-    httpd.serve_forever()
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=PORT, debug=True)
