@@ -4,10 +4,9 @@ services:
   waveform-web:
     image: ${IMG}
     container_name: ${CONTAINER_NAME}
-    ports:
-      - ${PORT}:${PORT}
     networks:
       - waveform-net
+    command: python3 src/http-server.py ${DEV_ARG}
 
 networks:
   waveform-net:

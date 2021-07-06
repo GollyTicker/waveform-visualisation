@@ -8,5 +8,3 @@ RUN pip3 install -r build/requirements.txt
 
 COPY build/config.yml build/
 COPY src src
-
-CMD python3 src/http-server.py
