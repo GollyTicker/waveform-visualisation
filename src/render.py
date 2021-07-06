@@ -13,4 +13,4 @@ def render_deploy_path_into_html(conf):
     with open(conf["html-file"],"w") as file:
         file.write(rendered)
 
-    print("Rendered HTML to deploy path: ", deploy_path)
+    print("Rendered HTML to deploy path:", deploy_path)
