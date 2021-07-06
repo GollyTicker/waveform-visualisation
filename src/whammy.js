@@ -1,3 +1,6 @@
+// This file is taken from https://github.com/antimatter15/whammy
+
+
 /*
 	var vid = new Whammy.Video();
 	vid.add(canvas or data url)

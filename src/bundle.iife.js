@@ -1,3 +1,5 @@
+// This file is taken from https://github.com/foobar404/Wave.js/ and slightly modified.
+
 var Wave = (function () {
     'use strict';
 
