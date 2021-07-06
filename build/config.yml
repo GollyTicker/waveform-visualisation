@@ -1,4 +1,4 @@
-http-listen-port: 1504
+http-listen-port: 80
 html-file: "src/index.html"
 path-placeholder: "__DEPLOY_PATH__"
 prod-path: "waveform-viz"

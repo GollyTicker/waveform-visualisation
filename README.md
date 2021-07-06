@@ -10,6 +10,6 @@ To convert an audio file to it's waveform visualisation, you can simply open the
 
 ## Run locally
 
-`./restart-http-server.sh --dev` and then open `http://localhost:1504`
+`./restart-http-server.sh --dev` and then open `http://localhost`
 
 Using `--dev` also activates on Flask's debug mode.
